@@ -10,18 +10,22 @@ export default function FBOptions(props) {
                 </props.sectionHeadingTag>
             </div>
             <ul className="FBOptions-ul">
-                <Section_1_upper_portion displayOptions={props.displayOptions} />
+                {
+                    (props.sectionIdentity === "Facebook Feature"? 
+                    <FB_Feature_upper_portion displayOptions={props.displayOptions} /> : 
+                    null)
+                }
             </ul>
             <button style={{ marginBottom: (hiddenoption === "Show More" ? "1.2rem" : "0rem") }} onClick={() => sethiddenoption((hiddenoption !== "Show More" ? "Show More" : "Show Less"))}>{hiddenoption}</button>
             <ul className="FBOptions-ul" style={{ display: (hiddenoption === "Show More" ? "None" : "Block") }}>
-                <Section_1_lower_portion displayOptions={props.displayOptions} />
+                <FB_Feature_lower_portion displayOptions={props.displayOptions} />
             </ul>
         </section>
     )
 }
 
 
-const Section_1_upper_portion = (props) => {
+const FB_Feature_upper_portion = (props) => {
     return (
         <>
             {
@@ -36,7 +40,7 @@ const Section_1_upper_portion = (props) => {
     )
 }
 
-const Section_1_lower_portion = (props) => {
+const FB_Feature_lower_portion = (props) => {
     return (
         <>
             {
@@ -49,4 +53,10 @@ const Section_1_lower_portion = (props) => {
             }
         </>
     )
+}
+
+const Gaming_Feature_lower_portion = (props) =>{
+    // return(
+
+    // )
 }
